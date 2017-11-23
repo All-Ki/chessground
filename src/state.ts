@@ -12,7 +12,9 @@ export interface State {
   check?: cg.Key; // square currently in check "a2"
   lastMove?: cg.Key[]; // squares part of the last move ["c3"; "c4"]
   selected?: cg.Key; // square currently selected "a1"
+
   rotate?: boolean;//should the pieces rotate?
+
   coordinates: boolean; // include coords attributes
   autoCastle: boolean; // immediately complete the castle by moving the rook after king move
   viewOnly: boolean; // don't bind events: the user will never be able to move pieces around
@@ -103,6 +105,9 @@ export function defaults(): Partial<State> {
     turnColor: 'white',
     coordinates: true,
     autoCastle: true,
+
+    rotate : true,
+
     viewOnly: false,
     disableContextMenu: false,
     resizable: true,
