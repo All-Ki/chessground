@@ -1,0 +1,45 @@
+{
+  "name": "chessground",
+  "version": "7.2.6",
+  "description": "lichess.org Chess UI",
+  "main": "chessground.js",
+  "typings": "chessground.d.ts",
+  "directories": {},
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^14",
+    "gulp": "^3",
+    "gulp-sourcemaps": "^2",
+    "gulp-typescript": "^3",
+    "gulp-uglify": "^3",
+    "gulp-util": "^3",
+    "tsify": "^3",
+    "typescript": "^2.4",
+    "uglify-js": "^3",
+    "vinyl-buffer": "^1",
+    "vinyl-source-stream": "^1",
+    "watchify": "^3"
+  },
+  "scripts": {
+    "pretest": "npm run compile",
+    "compile": "tsc",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/All-Ki/chessground.git"
+  },
+  "keywords": [
+    "chess",
+    "lichess.org",
+    "chessboard",
+    "UI",
+    "typescript"
+  ],
+  "author": "Thibault Duplessis (https://github.com/ornicar)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ornicar/chessground/issues"
+  },
+  "homepage": "https://github.com/ornicar/chessground"
+}
