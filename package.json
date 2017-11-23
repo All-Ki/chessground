@@ -2,7 +2,7 @@
   "name": "chessground",
   "version": "7.2.6",
   "description": "lichess.org Chess UI",
-  "main": "chessground.js",
+  "main": "dist/chessground.js",
   "typings": "chessground.d.ts",
   "directories": {},
   "dependencies": {
