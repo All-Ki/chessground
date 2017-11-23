@@ -5,7 +5,9 @@
   "main": "chessground.js",
   "typings": "chessground.d.ts",
   "directories": {},
-  "dependencies": {},
+  "dependencies": {
+    "@types/jquery": "^3.2.16"
+  },
   "devDependencies": {
     "browserify": "^14",
     "gulp": "^3",
