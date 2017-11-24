@@ -70,6 +70,7 @@ export const posToTranslateRel: (pos: cg.Pos, asWhite: boolean) => cg.NumberPair
 
 export const translateAbs = (el: HTMLElement, pos: cg.Pos, rotate?:boolean) => {
 let targetString = `translate(${pos[0]}px,${pos[1]}px) `;
+
 if(rotate){
 	targetString+= 'rotate(180deg)';
 }

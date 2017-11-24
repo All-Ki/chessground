@@ -21,7 +21,7 @@ export default function render(s: State): void {
   posToTranslate = s.dom.relative ? util.posToTranslateRel : util.posToTranslateAbs(s.dom.bounds()),
   translate = s.dom.relative ? util.translateRel : util.translateAbs,
 
-  shouldRotate = s.rotate ? (s.orientation === s.turnColor) : false,
+  shouldRotate: boolean = s.rotate ? s.orientation == s.turnColor : false,
 
   boardEl: HTMLElement = s.dom.elements.board,
   pieces: cg.Pieces = s.pieces,
