@@ -29,7 +29,7 @@ export default function render(s: State): void {
   anims: AnimVectors = curAnim ? curAnim.plan.anims : {},
   fadings: AnimFadings = curAnim ? curAnim.plan.fadings : {},
   curDrag: DragCurrent | undefined = s.draggable.current,
-     squares: SquareClasses = computeSquareClasses(s),
+  squares: SquareClasses = computeSquareClasses(s),
   samePieces: SamePieces = {},
   sameSquares: SameSquares = {},
   movedPieces: MovedPieces = {},
