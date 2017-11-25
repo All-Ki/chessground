@@ -21,15 +21,14 @@ export default function render(s: State): void {
   posToTranslate = s.dom.relative ? util.posToTranslateRel : util.posToTranslateAbs(s.dom.bounds()),
   translate = s.dom.relative ? util.translateRel : util.translateAbs,
 
-  shouldRotate: boolean = s.rotate ? s.orientation == s.turnColor : false,
+  shouldRotate: boolean = s.rotate ? (s.orientation != s.turnColor) : false,
 
   boardEl: HTMLElement = s.dom.elements.board,
   pieces: cg.Pieces = s.pieces,
   curAnim: AnimCurrent | undefined = s.animation.current,
   anims: AnimVectors = curAnim ? curAnim.plan.anims : {},
   fadings: AnimFadings = curAnim ? curAnim.plan.fadings : {},
-  curDrag: DragCurrent | undefined = s.draggable.current,
-  squares: SquareClasses = computeSquareClasses(s),
+  curDrag: DragCurrent | undefined = s.draggable.current   squares: SquareClasses = computeSquareClasses(s),
   samePieces: SamePieces = {},
   sameSquares: SameSquares = {},
   movedPieces: MovedPieces = {},
