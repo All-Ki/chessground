@@ -13,7 +13,8 @@ export interface State {
   lastMove?: cg.Key[]; // squares part of the last move ["c3"; "c4"]
   selected?: cg.Key; // square currently selected "a1"
 
-  rotate?: boolean;//should the pieces rotate?
+  rotate?: boolean;//rotation enabled?
+  shouldRotate:()=> boolean ; // should the pieces rotate?
 
   coordinates: boolean; // include coords attributes
   autoCastle: boolean; // immediately complete the castle by moving the rook after king move
@@ -107,7 +108,7 @@ export function defaults(): Partial<State> {
     autoCastle: true,
 
     rotate : true,
-
+    shouldRotate :function ( ) { return (this.rotate ? orientation != this.turnColor : false)},
     viewOnly: false,
     disableContextMenu: false,
     resizable: true,
@@ -177,5 +178,5 @@ export function defaults(): Partial<State> {
       prevSvgHash: ''
     },
     hold: timer()
-  };
+      };
 }
