@@ -108,7 +108,7 @@ export function defaults(): Partial<State> {
     autoCastle: true,
 
     rotate : true,
-    shouldRotate :function ( ) { return (this.rotate ? orientation != this.turnColor : false)},
+    shouldRotate :function ( ) { return (this.rotate ? this.orientation != this.turnColor : false)},
     viewOnly: false,
     disableContextMenu: false,
     resizable: true,

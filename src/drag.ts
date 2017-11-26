@@ -150,7 +150,7 @@ function processDrag(s: State): void {
         const translation = util.posToTranslateAbs(bounds)(cur.origPos, asWhite);
         translation[0] += cur.pos[0] + cur.dec[0];
         translation[1] += cur.pos[1] + cur.dec[1];
-        util.translateAbs(cur.element, translation,s.shouldRotate());
+        util.translateAbs(cur.element, translation);
 
         // move over element
         const overEl = s.dom.elements.over;
@@ -164,7 +164,7 @@ function processDrag(s: State): void {
               (asWhite ? pos[0] - 1 : 8 - pos[0]) * bounds.width / 8,
               (asWhite ? 8 - pos[1] : pos[1] - 1) * bounds.height / 8
             ];
-            util.translateAbs(overEl, vector,s.shouldRotate());
+            util.translateAbs(overEl, vector);
           } else {
             util.translateAway(overEl);
           }
