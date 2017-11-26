@@ -118,6 +118,8 @@ export function dragNewPiece(s: State, piece: cg.Piece, e: cg.MouchEvent, force?
 
 function processDrag(s: State): void {
   util.raf(() => {
+    const shouldRotate: boolean = s.rotate ? (s.orientation != s.turnColor) : false;
+
     const cur = s.draggable.current;
     if (!cur) return;
     // cancel animations while dragging
@@ -150,7 +152,7 @@ function processDrag(s: State): void {
         const translation = util.posToTranslateAbs(bounds)(cur.origPos, asWhite);
         translation[0] += cur.pos[0] + cur.dec[0];
         translation[1] += cur.pos[1] + cur.dec[1];
-        util.translateAbs(cur.element, translation);
+        util.translateAbs(cur.element, translation, shouldRotate);
 
         // move over element
         const overEl = s.dom.elements.over;
@@ -164,7 +166,7 @@ function processDrag(s: State): void {
               (asWhite ? pos[0] - 1 : 8 - pos[0]) * bounds.width / 8,
               (asWhite ? 8 - pos[1] : pos[1] - 1) * bounds.height / 8
             ];
-            util.translateAbs(overEl, vector);
+            util.translateAbs(overEl, vector,shouldRotate);
           } else {
             util.translateAway(overEl);
           }
